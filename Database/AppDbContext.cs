@@ -8,6 +8,9 @@ namespace MotorRentApp.Database
     {
         public AppDbContext(DbContextOptions options) : base(options)
         {
+            this.Database.EnsureCreated();
+            //TODO better way to configure migrations
+            //this.Database.Migrate();
         }
     }
 }
